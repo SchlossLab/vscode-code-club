@@ -12,7 +12,7 @@ demo-files/plot.png : \
 	Rscript demo-files/make_plot.R
 	
 # Generate report
-demo-files/report.% : \
+demo-files/report.pdf : \
 			demo-files/plot.png \
 			demo-files/report.Rmd
 	R -e 'library(rmarkdown);render("demo-files/report.Rmd",output_format="all")'	
@@ -24,3 +24,4 @@ clean:
 	rm demo-files/report.pdf
 	rm demo-files/report.md
 	rm demo-files/report.html
+	rm Rplots.pdf
