@@ -1,7 +1,10 @@
 ---
 title: "Categorizing Preferences"
 date: "Updated: `r Sys.Date()`"
-output: pdf_document
+output:
+  pdf_document: default
+  html_document:
+    keep_md: true
 ---
 
 We surveyed scientists for their preferences on various topics and summarize the results here:
