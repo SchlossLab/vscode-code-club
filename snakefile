@@ -1,5 +1,8 @@
 rule all:
-    input: "reports/report.pdf"
+    input: 
+        "reports/report.pdf",
+        "results/favorites_combined.csv",
+        "results/plot.png"
     
 rule sh_join_favorites:
     input: "data/favorites.csv" # A template csv file that we are going to use for headers
