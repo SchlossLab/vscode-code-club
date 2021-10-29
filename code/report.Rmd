@@ -1,0 +1,9 @@
+---
+title: "Categorizing Preferences"
+date: "Updated: `r Sys.Date()`"
+output: pdf_document
+---
+
+We surveyed scientists for their preferences on various topics and summarize the results here:
+
+![](../results/plot.png){width="50%"}
