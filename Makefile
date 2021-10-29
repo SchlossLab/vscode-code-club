@@ -1,27 +1,24 @@
 # Makefile to generate report of preferences
 	
 # Generate merged favorites table
-demo-files/favorites_combined.csv : \
-			demo-files/favorites_*.csv
-	head -n 1 demo-files/favorites.csv > demo-files/favorites_combined.csv && tail -n+2 -q demo-files/favorites_*.csv >> demo-files/favorites_combined.csv
+results/favorites_combined.csv : \
+			data/favorites_*.csv
+	awk '(NR == 1) || (FNR > 1)' data/favorites_*.csv > results/favorites_combined.csv
 	
 # Generate plot
-demo-files/plot.png : \
-			demo-files/favorites_combined.csv \
-			demo-files/make_plot.R
-	Rscript demo-files/make_plot.R
+results/plot.png : \
+			results/favorites_combined.csv \
+			code/make_plot.R
+	Rscript code/make_plot.R
 	
 # Generate report
-demo-files/report.pdf : \
-			demo-files/plot.png \
-			demo-files/report.Rmd
-	R -e 'library(rmarkdown);render("demo-files/report.Rmd",output_format="all")'	
+reports/report.pdf : \
+			results/plot.png \
+			code/report.Rmd
+	R -e 'library(rmarkdown);render("code/report.Rmd",output_format="all", output_dir="reports/")'
 
 # remove outputs
 clean: 
-	rm demo-files/favorites_combined.csv
-	rm demo-files/plot.png
-	rm demo-files/report.pdf
-	rm demo-files/report.md
-	rm demo-files/report.html
-	rm Rplots.pdf
+	rm results/favorites_combined.csv
+	rm results/plot.png
+	rm reports/report*
