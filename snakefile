@@ -31,7 +31,7 @@ rule r_write_report:
     params:
     shell:
         """
-        Rscript -e \'library(rmarkdown); rmarkdown::render("code/report.Rmd", output_dir="reports/", "pdf_document")\'
+        Rscript -e \'library(rmarkdown); rmarkdown::render("code/report.Rmd", output_dir="reports/", output_format="all")\'
         """
 onsuccess:
     print("🎉 completed successfully")
