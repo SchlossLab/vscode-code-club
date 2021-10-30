@@ -1,5 +1,7 @@
 # Makefile to generate report of preferences
 	
+all : results/favorites_combined.csv results/plot.png reports/report.pdf
+
 # Generate merged favorites table
 results/favorites_combined.csv : \
 			data/favorites_*.csv
