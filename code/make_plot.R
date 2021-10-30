@@ -2,8 +2,7 @@ library(tidyverse)
 
 table <- read_csv("results/favorites_combined.csv") 
     
-
-ggplot(table, aes(x=sunrise_or_sunset,fill=sunrise_or_sunset)) +
+p <- ggplot(table, aes(x=sunrise_or_sunset,fill=sunrise_or_sunset)) +
     geom_bar() +
     scale_y_continuous(expand=c(0,0)) +
     ggtitle("Sunrise or Sunset?") +
@@ -15,4 +14,4 @@ ggplot(table, aes(x=sunrise_or_sunset,fill=sunrise_or_sunset)) +
           plot.title = element_text(size=20)) +
     scale_fill_manual(values=c("#92b8db","#e49338"))
     
-ggsave("results/plot.png")
+ggsave("results/plot.png", p, height=5, width=5)
