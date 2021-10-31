@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This repo is meant to be used during a live demonstration of the VSCode IDE during a Schloss Lab Code Club. In it you will find setup instructions, and various file types that will help in this demo.
+This repo is meant to be used during a live demonstration of the VS Code IDE during a Schloss Lab Code Club. In it you will find setup instructions, and various file types that will help in this demo.
 
 ---
 
 ## Setup
 
-1. Please download VSCode from [here](https://code.visualstudio.com/download).
+1. Please download VS Code from [here](https://code.visualstudio.com/download). (If you are on a mac, make sure you drag VS Code to your applications folder after it downloads!)
 2. If you'd like to practice using the Source Control with Github, make sure your Git credentials are updated on your local machine/Great Lakes!
    * see [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 3. If you'd like to use the snakemake portion of this lesson, please make sure to have snakemake installed. e.g. with [miniconda3](https://docs.conda.io/en/latest/miniconda.html):
@@ -23,22 +23,29 @@ This repo is meant to be used during a live demonstration of the VSCode IDE duri
 
 ### General introduction and extension install
 
-**Install the following Extensions:**
+VS Code is a free IDE from microsoft that can be used with a variety of programming languages. It is completely customizable for exactly your needs. The use of extensions allow the user to add just the features they want. VS Code supports debugging, syntax highlighting, code completion, GitHub, keyboard shortcuts, and more! This repository mimics a typical Schloss Lab project directory to demonstrate the utility of VS Code for our everyday work. 
+
+To get the most out of VS Code, you'll want to install extensions for the languages and types of activities you'll be doing. Some useful extensions that we have identified are listed below:
 
 * VSCode on Great Lakes:
-  * remote-SSH
+  * [remote-SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+* Snakemake
+  * [Snakemake Language](https://marketplace.visualstudio.com/items?itemName=Snakemake.snakemake-lang)
 * Github Functions
-  * GitLens
-  * GitHub Pull Requests and Issues
-  * Git Graph
-  * R specific
-    * R
-    * R Markdown all-in-one
+  * [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+  * [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+  * [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+* R specific
+  * [R](https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r)
+  * [R Markdown all-in-one](https://marketplace.visualstudio.com/items?itemName=TianyiShi.rmarkdown)
 * Fun & convenient!
-  * Vscode-pdf
-  * Indent to Bracket
-  * Rainbow csv
-  * Path Intellisense
+  * [Vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) - allows for viewing PDFs
+  * [HTML Preview](https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode) - allows for HTML previews
+  * [Indent to Bracket](https://marketplace.visualstudio.com/items?itemName=LAK132.indent-to-bracket) - automatic indentation
+  * [Rainbow csv](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) - colored columns for csv/tsv files
+  * [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) - filename autocompletion
+  
+Additionally, to configure specific settings in VS Code you can either used the settings user interface or edith the settings.JSON file directly as described [here](https://code.visualstudio.com/docs/getstarted/settings)
   
 **Walkthrough of the project directory**
 
@@ -59,7 +66,7 @@ This repo is meant to be used during a live demonstration of the VSCode IDE duri
 
 ### Github functionality
 
-**Some packages to get the most out of Github in VScode:**
+**Some extensions to get the most out of Github in VScode:**
 
 Git Issues and Pull Requests, Git Graphs, Git Lens
 
@@ -74,14 +81,41 @@ Running through these steps should result in everyone having several favorites f
 
 ### R and R Markdown
 
+**Some extensions to get the most out of R/R Markdown in VScode:** 
+* R
+* R Markdown All in One
+* Indent to Complete
+
+R package to to install: 
+```
+install.packages("languageserver")
+```
+Also recommended is installing the [radian console](https://github.com/randy3k/radian) for R. 
+
 ### Putting it all together
 
 Makefiles and Snakemake files have their own syntax highlighting and are easy to create, deploy and analyze output all from the same window with a variety of languages and functions.
 
+To run all the steps of the example project with snakemake...
+\<sarah put snakemake info here here\>
+
+If you dont have snakemake configured, you can use the makefile instead. To run the makefile and produce all expected output files, execute this command from the top level of the project directory:
+```
+make all
+```
+You can remove all the output files by running:
+```
+make clean
+```
+
 ---
 
-## Resources
+## Additional Resources
 
-[R Markdown Notebook in VS code](https://yingqijing.medium.com/r-markdown-notebook-in-vs-code-3adb5a61417a)
+[VS Code documentation](https://code.visualstudio.com/docs)
 
-[Youtube - Ken Run: Using R in VS code](https://youtu.be/9xXBDU2z_8Y)
+[A Fresh Start for R in VS Code](https://medium.com/analytics-vidhya/a-fresh-start-for-r-in-vscode-ec61ed108cf6)
+
+[R Markdown Notebook in VS Code](https://yingqijing.medium.com/r-markdown-notebook-in-vs-code-3adb5a61417a)
+
+[Youtube - Ken Run: Using R in VS Code](https://youtu.be/9xXBDU2z_8Y)
