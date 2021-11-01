@@ -11,7 +11,6 @@ p <- ggplot(table, aes(x=sunrise_or_sunset,fill=sunrise_or_sunset)) +
     theme(legend.position = "none",
           axis.text = element_text(size=18),
           axis.title = element_text(size=18),
-          plot.title = element_text(size=20)) +
-    scale_fill_manual(values=c("#92b8db","#e49338"))
+          plot.title = element_text(size=20)) 
     
 ggsave("results/plot.png", p, height=5, width=5)
