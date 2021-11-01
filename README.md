@@ -23,7 +23,7 @@ This repo is meant to be used during a live demonstration of the VS Code IDE dur
 
 ### General introduction and extension install
 
-VS Code is a free IDE from microsoft that can be used with a variety of programming languages. It is completely customizable for exactly your needs. The use of extensions allow the user to add just the features they want. VS Code supports debugging, syntax highlighting, code completion, GitHub, keyboard shortcuts, and more! This repository mimics a typical Schloss Lab project directory to demonstrate the utility of VS Code for our everyday work. 
+VS Code is a free IDE from microsoft that can be used with a variety of programming languages. It is completely customizable for exactly your needs. The use of extensions allow the user to add just the features they want. VS Code supports debugging, syntax highlighting, code completion, GitHub, keyboard shortcuts, and more! This repository mimics a typical Schloss Lab project directory to demonstrate the utility of VS Code for our everyday work.
 
 To get the most out of VS Code, you'll want to install extensions for the languages and types of activities you'll be doing. Some useful extensions that we have identified are listed below:
 
@@ -81,30 +81,39 @@ Running through these steps should result in everyone having several favorites f
 
 ### R and R Markdown
 
-**Some extensions to get the most out of R/R Markdown in VScode:** 
+**Some extensions to get the most out of R/R Markdown in VScode:**
+
 * R
 * R Markdown All in One
 * Indent to Complete
 
-R package to to install: 
-```
+R package to to install:
+
+```{R}
 install.packages("languageserver")
 ```
-Also recommended is installing the [radian console](https://github.com/randy3k/radian) for R. 
+
+Also recommended is installing the [radian console](https://github.com/randy3k/radian) for R.
 
 ### Putting it all together
 
 Makefiles and Snakemake files have their own syntax highlighting and are easy to create, deploy and analyze output all from the same window with a variety of languages and functions.
 
-To run all the steps of the example project with snakemake...
-\<sarah put snakemake info here here\>
+To run all the steps of the example project with snakemake run the following code in the project home directory:
+
+```{bash}
+snakemake --cores all --use-conda
+```
 
 If you dont have snakemake configured, you can use the makefile instead. To run the makefile and produce all expected output files, execute this command from the top level of the project directory:
-```
+
+```{bash}
 make all
 ```
+
 You can remove all the output files by running:
-```
+
+```{bash}
 make clean
 ```
 
