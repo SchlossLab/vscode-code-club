@@ -1,3 +1,5 @@
+wildcards = glob_wildcards('data/favorites_{initials}.csv')
+
 rule all:
     input: 
         "reports/report.pdf",
@@ -7,13 +9,15 @@ rule all:
         "results/plot.png"
     
 rule sh_join_favorites:
-    input: "data/favorites.csv" # A template csv file that we are going to use for headers
+    input: 
+        header="data/favorites.csv", # A template csv file that we are going to use for headers
+        files=expand('data/favorites_{init}.csv', init = wildcards.initials)
     output: "results/favorites_combined.csv"
     params:
         files="data/favorites_*.csv"
     shell:
         """
-        awk '(NR == 1) || (FNR > 1)' {params.files} > {output}
+        awk '(NR == 1) || (FNR > 1)' {input.files} > {output}
         """
     
 rule r_plot_favorites:
