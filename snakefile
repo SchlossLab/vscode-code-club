@@ -1,6 +1,8 @@
 rule all:
     input: 
         "reports/report.pdf",
+        "reports/report.html",
+        "reports/report.md",
         "results/favorites_combined.csv",
         "results/plot.png"
     
@@ -26,7 +28,10 @@ rule r_plot_favorites:
 rule r_write_report:
     input: 
         rules.r_plot_favorites.output,
-    output: "reports/report.pdf"
+    output: 
+        "reports/report.pdf",
+        "reports/report.html",
+        "reports/report.md"
     conda: "envs/r-tidyverse.yaml"
     params:
     shell:
